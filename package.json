@@ -1,0 +1,10 @@
+{
+  "name": "clock-periodical",
+  "version": "0.0.1",
+  "description": "A clock based on the periodical chart",
+  "repository": {
+    "type": "git",
+    "url": "?.git"
+  },
+  "author": "Zim Segal"
+}
