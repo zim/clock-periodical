@@ -3,27 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <title>Clock Periodical</title>
-  <!-- <link rel="stylesheet" href="css/style.css"> -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <section class="city">
-    <div class="container">
-      
 
-	<img class="hour" src="images/numbers/1.jpg" alt="">
-	
-	<img class="second" src="images/numbers/1.jpg" alt="">
-
-    </div>
-  </section>
 
 <!-- DOM placeholder -->
-<div id="myClock"></div>
- 
- 
-  
- 
+<div id="myClock">
+
+
+
+</div>
+
+<div id="clockWrapper">
+
+  <div id="hourWrapper" class="col">
+
+    <img id="hourImgP" class="square hour" />
+    <img id="hourImgC" class="square hour" />
+    <img id="hourImgN" class="square hour" />
+
+  </div>
+
+  <div id="minuteWrapper" class="col">
+
+    <img id="minuteImgP" class="square minute" />
+    <img id="minuteImgC" class="square minute" />
+    <img id="minuteImgN" class="square minute" />
+
+  </div>
+
+  <div id="secondWrapper" class="col">
+
+    <img id="secondImgP" class="square second" />
+    <img id="secondImgC" class="square second" />
+    <img id="secondImgN" class="square second" />
+
+  </div>
+
+</div>
+
+
   <script src="js/script-clock.js"></script>
-  
+
 </body>
 </html>
