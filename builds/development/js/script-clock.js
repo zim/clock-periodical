@@ -29,17 +29,17 @@ function startTime() {
     // var sP, sC, sN;
 
     sP = (s-1);
-    console.log('sP =' + sP);
+    //console.log('sP =' + sP);
 
-    if(sP == 0){
-      console.log('sP == 59');
+    if(sP == -1){
+      console.log('sP ========== 59');
       sP=59;
     };
 
-    if(sP == 62){
-      console.log('sP == 62');
-      sP=2;
-    };
+    // if(sP == 62){
+    //       console.log('sP ======== 62');
+    //       sP=2;
+    //     };
 
     sC = (s);
     //console.log('sC =' + sC);
@@ -55,17 +55,17 @@ function startTime() {
     // };
 
     sN = (s+1);
-    console.log('sN =' + sN);
+    //console.log('sN =' + sN);
 
-    if(sN == 59){
-      console.log('sN == 59');
+    if(sN == 60){
+      console.log('sN ======== 60');
       sN=0;
     };
-
-    if(sN == 0){
-      console.log('sN == 0');
-      sN=1;
-    };
+    // 
+    // if(sN == 0){
+    //   console.log('sN ======== 0');
+    //   sN=1;
+    // };
 
 
 
