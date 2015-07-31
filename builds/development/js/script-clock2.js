@@ -58,7 +58,7 @@ var currentVert;
 // ===========================================================
 //CustomWebView.loadSounds(["audio/donkey.mp3", "audio/master.mp3"]);
 
-function init() {	
+function init() {
 console.log('init() CALLED ***********************');
 
 // set date etc...
@@ -75,7 +75,7 @@ var todayVert=new Date();
 currentVert = secStartPoint[sVert];
 
 	startTime();
-	
+
 	startSpin(currentVert);
 }
 
@@ -87,28 +87,28 @@ function startSpin() {
             var sSpin=parseInt(todaySpin.getSeconds());
 
 	//secTime = currentVert;
-	
+
 	console.log('secTime = ' + secTime);
 
 	secTime = secTime+1;
-	
+
 	console.log('secTime2 =-==== ' + secTime);
-	
-	numbersHourSpin.style.webkitTransform = "translate3d(0px,-" + hourStartPoint[hSpin-4] +"px,0px) scale(1)";
+
+	numbersHourSpin.style.webkitTransform = "translate3d(0px,-" + hourStartPoint[hSpin-3] +"px,0px) scale(1)";
 
 	numbersMinSpin.style.webkitTransform = "translate3d(0px,-" + minStartPoint[mSpin-3] +"px,0px) scale(1)";
-	
+
 	numbersSpin.style.webkitTransform = "translate3d(0px,-" + secStartPoint[sSpin-2] +"px,0px) scale(1)";
 
 	//blur1.style.webkitTransform = "translate3d(0px,-3202px,0px) scale(1)";
-	
-	// setTimeout(function(){			
+
+	// setTimeout(function(){
 	// 		blur1.style.display = "none";
 	// 		obj1.style.visibility = "visible";
 	// 		blur1.style.webkitTransitionDuration = "0s";
 	// 		blur1.style.webkitTransform = "translate3d(0px,0px,0px) scale(1)";
 	// 		blur1.style.display = "block";
-	// 		//alert("reset blur one");	
+	// 		//alert("reset blur one");
 	// 	}, 1400);
 
     var tSpin = setTimeout(function(){startSpin()},1000);
@@ -166,30 +166,26 @@ function startTime(today) {
     secondImgN.src = "images/numbers/" + sN + ".jpg";
 
 	// secTime = secTime+55;
-	// 
+	//
 	// 	numbersSpin.style.webkitTransform = "translate3d(0px,-" + secTime +"px,0px) scale(1)";
 
 	//blur1.style.webkitTransform = "translate3d(0px,-3202px,0px) scale(1)";
-	
-	// setTimeout(function(){			
+
+	// setTimeout(function(){
 	// 		blur1.style.display = "none";
 	// 		obj1.style.visibility = "visible";
 	// 		blur1.style.webkitTransitionDuration = "0s";
 	// 		blur1.style.webkitTransform = "translate3d(0px,0px,0px) scale(1)";
 	// 		blur1.style.display = "block";
-	// 		//alert("reset blur one");	
+	// 		//alert("reset blur one");
 	// 	}, 1400);
 
     var t = setTimeout(function(){startTime()},500);
 
-	
+
 }// END function startTime() {
 
 function checkTime(i) {
     if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
     return i;
 }
-
-
-
-
