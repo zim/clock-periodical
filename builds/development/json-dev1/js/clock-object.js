@@ -22,15 +22,15 @@ function element(number, name, small) {
   var clockWrap = document.getElementById(domObject);
 
 	var output='';
-	
+
 	var elements = new Array();
-	
+
 	var elementsHour = new Array();
 	var elementsMin = new Array();
 	var elementsSec = new Array();
-	
-	
-	
+
+
+
 	//CREATE CLOCK ELEMENTS
 	  var myClockWrapper = document.createElement('div');
 	  myClockWrapper.id = 'myClockWrapper';
@@ -59,19 +59,19 @@ function element(number, name, small) {
 
 	// CREATE ELEMENT DIVS HOURS
 	// for (var i = 0; i <= 24; i++) {
-	// 
+	//
 	// 		// elementsHour[i] = document.createElement('div');
 	// 		// 	//var varTemp = document.createElement('div');
 	// 		// 	  elementsHour[i].id = 'hourEl' + i;
 	// 		// 	  elementsHour[i].className = 'element';
 	// 		// 	  hourWrapSpin1.appendChild(elementsHour[i]);
-	// 
+	//
 	// 		var varTemp = document.createElement('div');
 	// 		varTemp.id = 'hourNumber' + i;
 	// 		  varTemp.className = 'hour-number';
 	// 		  varTemp.innerHTML = elements[i].number;
 	// 		  elementsHour[i].appendChild(varTemp);
-	// 
+	//
 	// 	}// end for (var i = 0; i <= 24; i++) {
 
 
@@ -92,7 +92,7 @@ function element(number, name, small) {
 	  // 	  // hourImage.style.display = 'block';
 	  // 	  // hourImage.style.position = 'absolute';
 	  // 	  minWrapSpin1.appendChild(minuteImage);
-	  // 
+	  //
 	  // 	  //Create SECOND image element
 	  // 		var secondImageSrc = 'images/numbers/numbers1d.jpg';
 	  // 		var secondImage = document.createElement('img');
@@ -101,35 +101,35 @@ function element(number, name, small) {
 	  // 	  // hourImage.style.display = 'block';
 	  // 	  // hourImage.style.position = 'absolute';
 	  // 	  secWrapSpin1.appendChild(secondImage);
-	
-	
-	
-	
+
+
+
+
 
 	$.getJSON('data.json', function(data){
 
 		console.log('data in object = ' + data);
 
 			for (var i = 0; i <= data.elements.length-1; i++) {
-				
+
 				// elements[i] = new element();
-				
-				
+
+
 
 				output += '<div class="element" style="outline:1px solid red;">';
-				
+
 				for (key in data.elements[i]) {
 					if (data.elements[i].hasOwnProperty(key)) {
-						output += '<div>' + 
+						output += '<div>' +
 								'<p class="one">"' + key +
 								'"</p><p class="two">' + data.elements[i][key] + '</p>';
 								'</div>';
-								
-								
-			    	}   
+
+
+			    	}
 				}
 				output += '</div>';
-				
+
 				// CREATE HOUR ELEMENTS
 				  elementsHour[i] = document.createElement('div');
 				//var varTemp = document.createElement('div');
@@ -137,25 +137,25 @@ function element(number, name, small) {
 				  elementsHour[i].className = 'element';
 				  //elementsHour[i].innerHTML = data.elements[i].number;
 				  hourWrapSpin1.appendChild(elementsHour[i]);
-				
+
 			     var varTemph = document.createElement('div');
 				 varTemph.id = 'hourElNumber' + i;
 				 varTemph.className = 'number';
 				 varTemph.innerHTML = data.elements[i].number;
 				 elementsHour[i].appendChild(varTemph);
-				
+
 				var varTempSmall = document.createElement('div');
 				 varTempSmall.id = 'hourElSmall' + i;
 				 varTempSmall.className = 'small';
 				 varTempSmall.innerHTML = data.elements[i].small;
 				 elementsHour[i].appendChild(varTempSmall);
-				
+
 				var varTempName = document.createElement('div');
 				 varTempName.id = 'hourElName' + i;
 				 varTempName.className = 'name';
 				 varTempName.innerHTML = data.elements[i].name;
 				 elementsHour[i].appendChild(varTempName);
-				
+
 				// CREATE MINUTE ELEMENTS
 				  elementsMin[i] = document.createElement('div');
 				//var varTemp = document.createElement('div');
@@ -169,7 +169,7 @@ function element(number, name, small) {
 				 varTempm.className = 'number';
 				 varTempm.innerHTML = data.elements[i].number;
 				 elementsMin[i].appendChild(varTempm);
-				
+
 				var varTempmSmall = document.createElement('div');
 				 varTempmSmall.id = 'minElSmall' + i;
 				 varTempmSmall.className = 'small';
@@ -181,7 +181,7 @@ function element(number, name, small) {
 				 varTempmName.className = 'name';
 				 varTempmName.innerHTML = data.elements[i].name;
 				 elementsMin[i].appendChild(varTempmName);
-				
+
 				// CREATE SECONDS ELEMENTS
 				  elementsSec[i] = document.createElement('div');
 				//var varTemp = document.createElement('div');
@@ -195,7 +195,7 @@ function element(number, name, small) {
 				 varTemps.className = 'number';
 				 varTemps.innerHTML = data.elements[i].number;
 				 elementsSec[i].appendChild(varTemps);
-				
+
 				var varTempsSmall = document.createElement('div');
 				 varTempsSmall.id = 'secElSmall' + i;
 				 varTempsSmall.className = 'small';
@@ -207,24 +207,24 @@ function element(number, name, small) {
 				 varTempsName.className = 'name';
 				 varTempsName.innerHTML = data.elements[i].name;
 				 elementsSec[i].appendChild(varTempsName);
-				
-				
+
+
 				console.log("data.elements[i][number] + data.elements[i][small] + data.elements[i][name] = " + data.elements[i].number + data.elements[i].small + data.elements[i].name);
-				
+
 				elements[i] = new element(data.elements[i].number,data.elements[i].name,data.elements[i].small);
 				//var myFather = new person("John", "Doe", 50, "blue");
 				console.log('well = ' + elements[i].name);
-				
+
 				// CREATE ELEMENT DIVS
 				console.log("LENGTH = " + elements.length);
 
 			// var update = document.getElementById('demo');
 			// 			update.innerHTML = output;
-				
-				
+
+
 			}// end for (var i = 0; i <= data.elements.length-1; i++) {
-				
-				
+
+
 
 	}); //getJSON
 
@@ -232,7 +232,7 @@ function element(number, name, small) {
 
 
 
-  
+
 
   // SPIN FUNCTION
   function startSpin() {
@@ -253,13 +253,34 @@ function element(number, name, small) {
 
   	console.log('secTime = ' + secTime);
 
+    console.log('hSpin = ' + hSpin);
+    console.log('mSpin = ' + mSpin);
+    console.log('sSpin = ' + sSpin);
+
   	secTime = secTime+1;
 
   	console.log('secTime2 =-==== ' + secTime);
 
+
+    // hourWrapSpin1.style.webkitTransform = "translate3d(10px,-" + ((hSpin*90)+3) +"px,0px) scale(1)";
+    //
+    // minWrapSpin1.style.webkitTransform = "translate3d(0px,-" + ((mSpin*90)+3) +"px,0px) scale(1)";
+    //
+    // secWrapSpin1.style.webkitTransform = "translate3d(0px,-" + ((sSpin*90)+3)+"px,0px) scale(1)";
+
+
+
     hourWrapSpin1.style.webkitTransform = "translate3d(0px,-" + hourStartPoint[hSpin-3] +"px,0px) scale(1)";
-            minWrapSpin1.style.webkitTransform = "translate3d(0px,-" + minStartPoint[mSpin-3] +"px,0px) scale(1)";
-            secWrapSpin1.style.webkitTransform = "translate3d(0px,-" + secStartPoint[sSpin-2] +"px,0px) scale(1)";
+
+    minWrapSpin1.style.webkitTransform = "translate3d(0px,-" + minStartPoint[mSpin-3] +"px,0px) scale(1)";
+
+    secWrapSpin1.style.webkitTransform = "translate3d(0px,-" + secStartPoint[sSpin-2] +"px,0px) scale(1)";
+
+
+
+
+
+
 
   	// numbersHourSpin.style.webkitTransform = "translate3d(0px,-" + hourStartPoint[hSpin-3] +"px,0px) scale(1)";
     //
@@ -268,6 +289,8 @@ function element(number, name, small) {
   	// numbersSpin.style.webkitTransform = "translate3d(0px,-" + secStartPoint[sSpin-2] +"px,0px) scale(1)";
 
     var tSpin = setTimeout(function(){startSpin()},1000);
+
+    //startSpin();
   }
   // END function startSpin() {
 

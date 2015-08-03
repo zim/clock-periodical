@@ -376,7 +376,7 @@ width:320px;
   width:320px;
   height:568px;
   outline:1px solid red;
--webkit-transform: translate3d(0px, 20px, 0px);
+-webkit-transform: translate3d(0px, 0px, 0px);
 overflow:hidden;
 }
 
@@ -395,11 +395,11 @@ overflow:hidden;
 
 
 #hourWrapSpin1{
-	
-  top:10px;
+
+  top:20px;
   left:10px;
 /*outline:1px solid yellow;*/
--webkit-transform: translate3d(10px, 0px, 0px);
+-webkit-transform: translate3d(10px, 20px, 0px);
 }
 
 .element{
@@ -459,14 +459,14 @@ overflow:hidden;
 }
 
 #minWrapSpin1{
-  top:10px;
+  top:20px;
   left:120px;
 /*outline:1px solid yellow;*/
 -webkit-transform: translate3d(0px, 0px, 0px);
 }
 
 #secWrapSpin1{
-  top:10px;
+  top:20px;
   left:220px;
 /*outline:1px solid yellow;*/
 -webkit-transform: translate3d(0px, 0px, 0px);
