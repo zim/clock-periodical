@@ -421,6 +421,7 @@ overflow:hidden;
 	height:80px;
 	background-color: #c7d401;
 	color: #000;
+  opacity:0;
 
   -webkit-transform: translate3d(0px, 0px, 0px);
 }

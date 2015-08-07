@@ -7,9 +7,10 @@ var Clock = Clock || (function(domObject){
 
   // SET DATE OBJECT
   var todaySpin;
-  var hSpin;
-  var mSpin;
-  var sSpin;
+  var hSpin, hSpinPrev, hSpinNext;
+  var mSpin, mSpinPrev, mSpinNext;
+  var sSpin, sSpinPrev, sSpinNext;
+
 
   //document.getElementById('myClock').innerHTML = h+":"+m+":"+s;
 
@@ -24,6 +25,7 @@ function element(number, name, small) {
 	var output='';
 
 	var elements = new Array();
+
 
 	var elementsHour = new Array();
 	var elementsMin = new Array();
@@ -59,7 +61,9 @@ function element(number, name, small) {
 
 	$.getJSON('data.json', function(data){
 
-		console.log('data in object = ' + data);
+		console.log('$.getJSON(data.json, function(data){ CALLLED data in object = ' + data);
+
+    console.log('data in object 1111111 = ' + data.elements);
 
 			for (var i = 0; i <= data.elements.length-1; i++) {
 
@@ -182,9 +186,11 @@ function element(number, name, small) {
 
 
 
-  // SPIN FUNCTION
+  // FADE FUNCTION
   function startFade() {
-    console.log('CLOCK OBJECT function startSpin() CALLED *********************** currentVert ===== ' + currentVert);
+    console.log('CLOCK OBJECT function startFade() CALLED *********************** currentVert ===== ' + currentVert);
+
+
     // var todaySpin=new Date();
     // var hSpin=parseInt(todaySpin.getHours());
     // var mSpin=parseInt(todaySpin.getMinutes());
@@ -192,6 +198,23 @@ function element(number, name, small) {
 
     todaySpin=new Date();
     hSpin=parseInt(todaySpin.getHours());
+    mSpin=parseInt(todaySpin.getMinutes());
+    sSpin=parseInt(todaySpin.getSeconds());
+
+
+
+    hSpinPrev=hSpin-1;
+    hSpinNext=hSpin+1;
+
+    mSpinPrev=mSpin-1;
+    mSpinNext=mSpin+1;
+
+    sSpinPrev=sSpin-1;
+    sSpinNext=sSpin+1;
+
+
+
+
     mSpin=parseInt(todaySpin.getMinutes());
     sSpin=parseInt(todaySpin.getSeconds());
 
@@ -217,7 +240,21 @@ function element(number, name, small) {
     secWrapSpin1.style.opacity = "1";
 
 
-    console.log("elements[i] = " + elements[hSpin][number]);
+    console.log("elementsSec[i][i] = " + elementsSec[hSpin]);
+
+    elementsSec[hSpinPrev].style.opacity = "0";
+    elementsSec[sSpin].style.opacity = "1";
+
+
+    elementsMin[mSpin].style.opacity = "1";
+
+
+    elementsHour[hSpin].style.opacity = "1";
+
+
+    elementsSec[sSpin-1].style.opacity = "0";
+    elementsMin[mSpin].style.opacity = "1";
+    elementsHour[hSpin].style.opacity = "1";
 
 
 
@@ -241,11 +278,17 @@ function element(number, name, small) {
 
     var tFade = setTimeout(function(){startFade()},1000);
 
-    //startSpin();
+    //startFade();
   }
-  // END function startSpin() {
+  // END function startFade() {
 
-  startFade();
+  console.log("elements bottom = " + elements);
+
+  var tFadeMain = setTimeout(function(){
+    startFade();
+  },2000);
+
+
 
 
 
